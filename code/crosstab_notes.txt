@@ -1,0 +1,86 @@
+crosstab notes
+
+Yes, you are correct! The contingency table created using the `pd.crosstab()` function is a summary table that shows the frequency (or count) distribution of two categorical variables. It essentially provides a matrix where the rows represent categories of one variable, and the columns represent categories of the other variable. Each cell in the table indicates the count of occurrences for that specific row and column combination.
+
+### Contingency Table Insights:
+1. **Frequency and Distribution**: It shows the count of each combination of categories, helping you understand how two variables are distributed relative to each other.
+2. **Segment Analysis**: Useful for understanding segmentation, such as how different customer segments (e.g., gender, contract type) behave in relation to another variable (e.g., churn).
+3. **Proportions and Probability**: It can be used to calculate the probability of one event given another (conditional probability) by dividing the counts by the total number of observations.
+4. **Basic Counting**: It provides basic counts that can be used for further statistical analysis, such as calculating expected values for a Chi-Square test.
+
+### Example Questions the Contingency Table Answers:
+1. **Are certain customer segments more likely to churn?**
+2. **What proportion of customers in each contract type has dependents?**
+3. **Is there an association between gender and payment method?**
+4. **How many customers with specific contract types are senior citizens?**
+
+### Visualizations with Seaborn (sns):
+Here are some great Seaborn plots that can be created based on the contingency table:
+
+1. **Heatmap**: Visualizes the counts in the contingency table using color gradients.
+   ```python
+   plt.figure(figsize=(10, 6))
+   sns.heatmap(contingency_table, annot=True, fmt="d", cmap="YlGnBu")
+   plt.title(f'Heatmap of {col1} vs {col2}')
+   plt.show()
+   ```
+   - **Use Case**: Shows the intensity of the relationship between the two variables, making it easy to spot patterns or high/low count combinations.
+
+2. **Count Plot**: Displays the counts of observations in each category for one of the categorical variables, segmented by another categorical variable.
+   ```python
+   plt.figure(figsize=(10, 6))
+   sns.countplot(x=col1, hue=col2, data=df)
+   plt.title(f'Count Plot of {col1} by {col2}')
+   plt.xlabel(col1)
+   plt.ylabel('Count')
+   plt.show()
+   ```
+   - **Use Case**: Quickly visualizes the distribution of one categorical variable broken down by another.
+
+3. **Stacked Bar Plot**: Similar to a count plot but stacked, showing proportions.
+   ```python
+   contingency_table.plot(kind='bar', stacked=True, figsize=(10, 6))
+   plt.title(f'Stacked Bar Plot of {col1} by {col2}')
+   plt.xlabel(col1)
+   plt.ylabel('Count')
+   plt.legend(title=col2)
+   plt.show()
+   ```
+   - **Use Case**: Useful for understanding the relative proportions of categories within each group.
+
+4. **Mosaic Plot (using `statsmodels`)**: Visualizes the joint distribution of two categorical variables.
+   ```python
+   from statsmodels.graphics.mosaicplot import mosaic
+   mosaic(df, [col1, col2])
+   plt.title(f'Mosaic Plot of {col1} vs {col2}')
+   plt.show()
+   ```
+   - **Use Case**: Provides a detailed view of the relationship between two categorical variables with each box area proportional to the frequency.
+
+### Using Contingency Tables for Probability:
+1. **Joint Probability**: Proportion of observations falling into each cell (e.g., probability of being male and using electronic check).
+   ```python
+   joint_prob = contingency_table / contingency_table.values.sum()
+   print("Joint Probability Table:\n", joint_prob)
+   ```
+
+2. **Marginal Probability**: Probability of each category independently.
+   ```python
+   marginal_prob_row = contingency_table.sum(axis=1) / contingency_table.values.sum()
+   marginal_prob_col = contingency_table.sum(axis=0) / contingency_table.values.sum()
+   print("Marginal Probability (Row):\n", marginal_prob_row)
+   print("Marginal Probability (Column):\n", marginal_prob_col)
+   ```
+
+3. **Conditional Probability**: Probability of one variable given the level of another (e.g., probability of using paperless billing given the customer churned).
+   ```python
+   conditional_prob = contingency_table.div(contingency_table.sum(axis=1), axis=0)
+   print("Conditional Probability (Given Row):\n", conditional_prob)
+   ```
+
+### Summary:
+- **Heatmaps** and **count plots** provide a visual overview of distributions and relationships.
+- The **contingency table** itself is crucial for calculating and interpreting probabilities.
+- Understanding and using these visualizations and calculations helps in making data-driven decisions and insights.
+
+These visualizations and analyses will provide a comprehensive view of your categorical data relationships. Let me know if you would like further assistance or additional details!
