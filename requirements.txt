@@ -1,0 +1,10 @@
+jinja2
+pandas==1.5.3
+numpy==1.23.5
+matplotlib==3.6.2
+seaborn==0.12.1
+missingno==0.5.1
+scipy==1.9.3
+tqdm
+
+
