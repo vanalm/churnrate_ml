@@ -5,6 +5,11 @@ churn in a telco dataset. The project will focus on automated EDA,
 insightful data presentation, feature engineering, and the application of 
 multiple ML algorithms to identify the best performing model.
 
+Deliverables:
+Exploratory Data Analysis Presentation
+Machine Learning Presentation
+Model with specs
+
 Project Phases:
 
 Data Preparation and Initial Setup
