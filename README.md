@@ -4,6 +4,11 @@
 - The longer people have been customers, the less the churn rate (as noted in statistical relationship between tenure and churn and total charges and churn)
 - The higher the monthly bill, the higher the churn rate
 - Categorical variables such as contract type, online security, and internet service exhibit strong associations with churn, with month-to-month contracts, lack of online security, and fiber optic service users being more likely to churn ( Chi-squared tests confirm these associations, and T-tests for numerical variables indicate significant differences between churn and non-churn groups.)
+- This is an imbalanced dataset, treat it accordingly.
+(>>> df['Churn'].value_counts(normalize=True)
+Churn
+No     0.73463
+Yes    0.26537
 
 ### Business Conclusions:
 
