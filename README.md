@@ -30,8 +30,23 @@
 2. **Interpretability**:  
    A focus on model interpretability enables better understanding of key factors driving churn, guiding data-driven decision-making and refining strategies for customer retention and service improvement.
 
+---
+
+## Data Processing Recommendations
+- **Address Class Imbalance**: The churn class is imbalanced, mustapply techniques such as oversampling (SMOTE) or class weighting in models.
+- **Handle Missing Data**: No missing values in this dataset
+- **Standardization**: Standardize tenure, MonthlyCharges, and TotalCharges for better model performance, as they have different scales.
+- **Encode Categorical Variables**: Use one-hot encoding for categorical variables like InternetService, Contract, PaymentMethod, and others.
+- **Feature Engineering**: Create interaction terms or binary flags for customers with no online security or tech support, as these have strong associations with churn.
 
 ---
+
+## Algorithm Recommendations
+- **Logistic Regression**: A good starting point given the binary nature of the target variable (Churn), especially after feature scaling and one-hot encoding.
+- **Random Forest / Gradient Boosting**: These ensemble methods can capture non-linear relationships and interactions between features effectively.
+- **XGBoost**: Ideal for handling imbalanced data and extracting complex patterns.
+- **Support Vector Machine (SVM)**: Useful for classification tasks, though more appropriate after scaling the features.
+- **Neural Networks**: Applicable if the dataset is large enough, especially after transforming categorical variables into suitable formats.
 
 ## Numerical Variables Analysis
 
@@ -135,20 +150,3 @@
 - **T-test**: t = 18.66, p = 1.50e-74 (Highly significant)
 - **Cohen's D**: 0.459 (Moderate effect size)
 
----
-
-## Data Processing Recommendations
-- **Handle Missing Data**: Impute or remove missing values, especially in continuous variables like TotalCharges.
-- **Standardization**: Standardize tenure, MonthlyCharges, and TotalCharges for better model performance, as they have different scales.
-- **Encode Categorical Variables**: Use one-hot encoding for categorical variables like InternetService, Contract, PaymentMethod, and others.
-- **Feature Engineering**: Create interaction terms or binary flags for customers with no online security or tech support, as these have strong associations with churn.
-- **Address Class Imbalance**: If the churn class is imbalanced, apply techniques such as oversampling (SMOTE) or class weighting in models.
-
----
-
-## Algorithm Recommendations
-- **Logistic Regression**: A good starting point given the binary nature of the target variable (Churn), especially after feature scaling and one-hot encoding.
-- **Random Forest / Gradient Boosting**: These ensemble methods can capture non-linear relationships and interactions between features effectively.
-- **XGBoost**: Ideal for handling imbalanced data and extracting complex patterns.
-- **Support Vector Machine (SVM)**: Useful for classification tasks, though more appropriate after scaling the features.
-- **Neural Networks**: Applicable if the dataset is large enough, especially after transforming categorical variables into suitable formats.
