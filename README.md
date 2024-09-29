@@ -1,197 +1,131 @@
-<!DOCTYPE html>
-<html>
+# Integrated Analysis Report
 
-<head>
-    <meta charset="UTF-8">
-    <title>Automated Integrated Analysis Report</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+### Notes on Proceeding
+To publish this report on the front page of your GitHub repository, simply paste this content into the `README.md` file. Ensure you address the data processing recommendations, handle missing values, standardize numerical variables, and encode categorical ones. Consider class imbalance before model building. Start with Logistic Regression and explore advanced techniques like Random Forest and XGBoost.
 
-        h1 {
-            color: #333;
-        }
+---
 
-        h2 {
-            color: #555;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
+## Statistical Summary
+The analysis reveals significant relationships between several factors and customer churn. Notably, longer tenure and higher total charges are associated with lower churn rates, while higher monthly charges slightly increase churn likelihood. Categorical variables such as contract type, online security, and internet service exhibit strong associations with churn, with month-to-month contracts, lack of online security, and fiber optic service users being more likely to churn. Chi-squared tests confirm these associations, and T-tests for numerical variables indicate significant differences between churn and non-churn groups.
 
-        h3 {
-            color: #666;
-            margin-top: 30px;
-        }
+---
 
-        h4 {
-            color: #777;
-            margin-top: 20px;
-        }
+## Numerical Variables Analysis
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 20px;
-        }
+### Correlation with Target Variable (Churn):
+- **Tenure**: -0.353 (Moderate negative correlation)
+- **TotalCharges**: -0.198 (Weak negative correlation)
+- **MonthlyCharges**: 0.194 (Weak positive correlation)
+- **SeniorCitizen**: 0.151 (Weak positive correlation)
 
-        th,
-        td {
-            text-align: right;
-            padding: 8px;
-            border: 1px solid #ddd;
-        }
+---
 
-        th {
-            background-color: #f2f2f2;
-        }
+## Summary Statistics Grouped by Churn
 
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
+### SeniorCitizen:
+- Mean Churn: Yes = 0.26, No = 0.13 (Churn group has more senior citizens)
 
-        .section {
-            margin-bottom: 60px;
-        }
+### Tenure:
+- Mean Churn: Yes = 18.09, No = 37.72 (Lower tenure correlates with higher churn)
 
-        .stat {
-            font-weight: bold;
-        }
+### MonthlyCharges:
+- Mean Churn: Yes = 74.60, No = 61.39 (Higher charges correlate with higher churn)
 
-        p {
-            line-height: 1.6;
-        }
-    </style>
-</head>
+### TotalCharges:
+- Mean Churn: Yes = 1541.38, No = 2560.26 (Lower total charges correlate with higher churn)
 
-<body>
-    <h1>Integrated Analysis Report</h1>
+---
 
+## Categorical Variables Analysis
 
+### Gender
+- **Chi-Squared Test**: χ² = 0.4912, p = 0.4834 (Not significant)
+- **Conclusion**: No significant relationship between gender and churn.
 
-    <h2>Statistical Summary</h2>
-    <p>
-        The analysis reveals significant relationships between several factors and customer churn. Notably, longer tenure and higher total charges are associated with lower churn rates, while higher monthly charges slightly increase churn likelihood. Categorical variables such as contract type, online security, and internet service exhibit strong associations with churn, with month-to-month contracts, lack of online security, and fiber optic service users being more likely to churn. Chi-squared tests confirm these associations, and T-tests for numerical variables indicate significant differences between churn and non-churn groups.
-    </p>
+### Partner
+- **Chi-Squared Test**: χ² = 154.27, p = 2.02e-35 (Highly significant)
+- **Cramér's V**: 0.148 (Moderate association)
+- **Conclusion**: Having a partner is moderately related to churn.
 
-    <h2>Numerical Variables Analysis</h2>
-    <h3>Correlation Analysis</h3>
-    <h4>Correlation with Target Variable (Churn)</h4>
-    <ul>
-        <li>Tenure: -0.353 (Moderate negative correlation)</li>
-        <li>TotalCharges: -0.198 (Weak negative correlation)</li>
-        <li>MonthlyCharges: 0.194 (Weak positive correlation)</li>
-        <li>SeniorCitizen: 0.151 (Weak positive correlation)</li>
-    </ul>
+### Dependents
+- **Chi-Squared Test**: χ² = 184.0, p = 6.49e-42 (Highly significant)
+- **Cramér's V**: 0.162 (Moderate association)
+- **Conclusion**: Customers without dependents are more likely to churn.
 
-    <h3>Summary Statistics Grouped by Churn</h3>
-    <h4>SeniorCitizen:</h4>
-    <p>Mean Churn: Yes = 0.26, No = 0.13 (Churn group has more senior citizens)</p>
+### PhoneService
+- **Chi-Squared Test**: χ² = 0.7767, p = 0.3782 (Not significant)
+- **Conclusion**: No significant relationship between phone service and churn.
 
-    <h4>Tenure:</h4>
-    <p>Mean Churn: Yes = 18.09, No = 37.72 (Lower tenure correlates with higher churn)</p>
+### MultipleLines
+- **Chi-Squared Test**: χ² = 12.30, p = 0.0021 (Significant)
+- **Cramér's V**: 0.038 (Weak association)
+- **Conclusion**: Multiple lines have a weak association with churn.
 
-    <h4>MonthlyCharges:</h4>
-    <p>Mean Churn: Yes = 74.60, No = 61.39 (Higher charges correlate with higher churn)</p>
+### InternetService
+- **Chi-Squared Test**: χ² = 728.44, p = 6.61e-159 (Highly significant)
+- **Cramér's V**: 0.322 (Relatively strong association)
+- **Conclusion**: Internet service type strongly correlates with churn, particularly fiber-optic users.
 
-    <h4>TotalCharges:</h4>
-    <p>Mean Churn: Yes = 1541.38, No = 2560.26 (Lower total charges correlate with higher churn)</p>
+### OnlineSecurity
+- **Chi-Squared Test**: χ² = 843.47, p = 6.98e-184 (Highly significant)
+- **Cramér's V**: 0.346 (Relatively strong association)
+- **Conclusion**: Lack of online security services strongly correlates with churn.
 
-    <h2>Categorical Variables Analysis</h2>
+### TechSupport
+- **Chi-Squared Test**: χ² = 821.73, p = 3.66e-179 (Highly significant)
+- **Cramér's V**: 0.342 (Relatively strong association)
+- **Conclusion**: Customers without tech support are more likely to churn.
 
-    <h3>Gender</h3>
-    <p>Chi-Squared Test: χ² = 0.4912, p = 0.4834 (Not significant)</p>
-    <p>Conclusion: No significant relationship between gender and churn.</p>
+### Contract
+- **Chi-Squared Test**: χ² = 1174.77, p = 7.99e-256 (Highly significant)
+- **Cramér's V**: 0.409 (Relatively strong association)
+- **Conclusion**: Contract type is a strong predictor of churn, with month-to-month customers showing higher churn rates.
 
-    <h3>Partner</h3>
-    <p>Chi-Squared Test: χ² = 154.27, p = 2.02e-35 (Highly significant)</p>
-    <p>Cramér's V: 0.148 (Moderate association)</p>
-    <p>Conclusion: Having a partner is moderately related to churn.</p>
+### PaperlessBilling
+- **Chi-Squared Test**: χ² = 253.57, p = 4.34e-57 (Highly significant)
+- **Cramér's V**: 0.19 (Moderate association)
+- **Conclusion**: Paperless billing moderately correlates with churn.
 
-    <h3>Dependents</h3>
-    <p>Chi-Squared Test: χ² = 184.0, p = 6.49e-42 (Highly significant)</p>
-    <p>Cramér's V: 0.162 (Moderate association)</p>
-    <p>Conclusion: Customers without dependents are more likely to churn.</p>
+### PaymentMethod
+- **Chi-Squared Test**: χ² = 641.20, p = 1.18e-138 (Highly significant)
+- **Cramér's V**: 0.302 (Relatively strong association)
+- **Conclusion**: Payment method strongly correlates with churn, with electronic check users having the highest churn rate.
 
-    <h3>PhoneService</h3>
-    <p>Chi-Squared Test: χ² = 0.7767, p = 0.3782 (Not significant)</p>
-    <p>Conclusion: No significant relationship between phone service and churn.</p>
+---
 
-    <h3>MultipleLines</h3>
-    <p>Chi-Squared Test: χ² = 12.30, p = 0.0021 (Significant)</p>
-    <p>Cramér's V: 0.038 (Weak association)</p>
-    <p>Conclusion: Multiple lines have a weak association with churn.</p>
+## Numerical Variables Tests
 
-    <h3>InternetService</h3>
-    <p>Chi-Squared Test: χ² = 728.44, p = 6.61e-159 (Highly significant)</p>
-    <p>Cramér's V: 0.322 (Relatively strong association)</p>
-    <p>Conclusion: Internet service type strongly correlates with churn, particularly fiber-optic users.</p>
+### SeniorCitizen
+- **T-test**: t = -11.35, p = 3.57e-29 (Highly significant)
+- **Cohen's D**: -0.347 (Moderate effect size)
 
-    <h3>OnlineSecurity</h3>
-    <p>Chi-Squared Test: χ² = 843.47, p = 6.98e-184 (Highly significant)</p>
-    <p>Cramér's V: 0.346 (Relatively strong association)</p>
-    <p>Conclusion: Lack of online security services strongly correlates with churn.</p>
+### Tenure
+- **T-test**: t = 34.82, p = 2.91e-232 (Highly significant)
+- **Cohen's D**: 0.856 (Large effect size)
+- **Conclusion**: Longer tenure significantly reduces churn likelihood.
 
-    <h3>TechSupport</h3>
-    <p>Chi-Squared Test: χ² = 821.73, p = 3.66e-179 (Highly significant)</p>
-    <p>Cramér's V: 0.342 (Relatively strong association)</p>
-    <p>Conclusion: Customers without tech support are more likely to churn.</p>
+### MonthlyCharges
+- **T-test**: t = -18.45, p = 4.29e-73 (Highly significant)
+- **Cohen's D**: -0.448 (Moderate effect size)
 
-    <h3>Contract</h3>
-    <p>Chi-Squared Test: χ² = 1174.77, p = 7.99e-256 (Highly significant)</p>
-    <p>Cramér's V: 0.409 (Relatively strong association)</p>
-    <p>Conclusion: Contract type is a strong predictor of churn, with month-to-month customers showing higher churn rates.</p>
+### TotalCharges
+- **T-test**: t = 18.66, p = 1.50e-74 (Highly significant)
+- **Cohen's D**: 0.459 (Moderate effect size)
 
-    <h3>PaperlessBilling</h3>
-    <p>Chi-Squared Test: χ² = 253.57, p = 4.34e-57 (Highly significant)</p>
-    <p>Cramér's V: 0.19 (Moderate association)</p>
-    <p>Conclusion: Paperless billing moderately correlates with churn.</p>
+---
 
-    <h3>PaymentMethod</h3>
-    <p>Chi-Squared Test: χ² = 641.20, p = 1.18e-138 (Highly significant)</p>
-    <p>Cramér's V: 0.302 (Relatively strong association)</p>
-    <p>Conclusion: Payment method strongly correlates with churn, with electronic check users having the highest churn rate.</p>
+## Data Processing Recommendations
+- **Handle Missing Data**: Impute or remove missing values, especially in continuous variables like TotalCharges.
+- **Standardization**: Standardize tenure, MonthlyCharges, and TotalCharges for better model performance, as they have different scales.
+- **Encode Categorical Variables**: Use one-hot encoding for categorical variables like InternetService, Contract, PaymentMethod, and others.
+- **Feature Engineering**: Create interaction terms or binary flags for customers with no online security or tech support, as these have strong associations with churn.
+- **Address Class Imbalance**: If the churn class is imbalanced, apply techniques such as oversampling (SMOTE) or class weighting in models.
 
-    <h2>Numerical Variables Tests</h2>
+---
 
-    <h3>SeniorCitizen</h3>
-    <p>T-test: t = -11.35, p = 3.57e-29 (Highly significant)</p>
-    <p>Cohen's D: -0.347 (Moderate effect size)</p>
-
-    <h3>Tenure</h3>
-    <p>T-test: t = 34.82, p = 2.91e-232 (Highly significant)</p>
-    <p>Cohen's D: 0.856 (Large effect size)</p>
-    <p>Conclusion: Longer tenure significantly reduces churn likelihood.</p>
-
-    <h3>MonthlyCharges</h3>
-    <p>T-test: t = -18.45, p = 4.29e-73 (Highly significant)</p>
-    <p>Cohen's D: -0.448 (Moderate effect size)</p>
-
-    <h3>TotalCharges</h3>
-    <p>T-test: t = 18.66, p = 1.50e-74 (Highly significant)</p>
-    <p>Cohen's D: 0.459 (Moderate effect size)</p>
-
-    <h2>Data Processing Recommendations</h2>
-    <ul>
-        <li>Handle Missing Data: Impute or remove missing values, especially in continuous variables like TotalCharges.</li>
-        <li>Standardization: Standardize tenure, MonthlyCharges, and TotalCharges for better model performance, as they have different scales.</li>
-        <li>Encode Categorical Variables: Use one-hot encoding for categorical variables like InternetService, Contract, PaymentMethod, and others.</li>
-        <li>Feature Engineering: Create interaction terms or binary flags for customers with no online security or tech support, as these have strong associations with churn.</li>
-        <li>Address Class Imbalance: If the churn class is imbalanced, apply techniques such as oversampling (SMOTE) or class weighting in models.</li>
-    </ul>
-
-    <h2>Algorithm Recommendations</h2>
-    <ul>
-        <li>Logistic Regression: A good starting point given the binary nature of the target variable (Churn), especially after feature scaling and one-hot encoding.</li>
-        <li>Random Forest / Gradient Boosting: These ensemble methods can capture non-linear relationships and interactions between features effectively.</li>
-        <li>XGBoost: Ideal for handling imbalanced data and extracting complex patterns.</li>
-        <li>Support Vector Machine (SVM): Useful for classification tasks, though more appropriate after scaling the features.</li>
-        <li>Neural Networks: Applicable if the dataset is large enough, especially after transforming categorical variables into suitable formats.</li>
-    </ul>
-
-</body>
-
-</html>
+## Algorithm Recommendations
+- **Logistic Regression**: A good starting point given the binary nature of the target variable (Churn), especially after feature scaling and one-hot encoding.
+- **Random Forest / Gradient Boosting**: These ensemble methods can capture non-linear relationships and interactions between features effectively.
+- **XGBoost**: Ideal for handling imbalanced data and extracting complex patterns.
+- **Support Vector Machine (SVM)**: Useful for classification tasks, though more appropriate after scaling the features.
+- **Neural Networks**: Applicable if the dataset is large enough, especially after transforming categorical variables into suitable formats.
