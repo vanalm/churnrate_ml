@@ -3,8 +3,8 @@
 ## Key Takeaways
 - The longer people have been customers, the less the churn rate (as noted in statistical relationship between tenure and churn and total charges and churn)
 - The higher the monthly bill, the higher the churn rate
-- Categorical variables such as contract type, online security, and internet service exhibit strong associations with churn, with month-to-month contracts, lack of online security, and fiber optic service users being more likely to churn ( Chi-squared tests confirm these associations, and T-tests for numerical variables indicate significant differences between churn and non-churn groups.)
-- This is an imbalanced dataset, treat it accordingly.
+- Categorical variables like contract type, online security, and internet service show strong associations with churn, with month-to-month contracts, lack of online security, and fiber optic service users being more likely to churn ( Chi-squared tests confirm these associations, and T-tests for numerical variables indicate significant differences between churn and non-churn groups.)
+- This is an imbalanced dataset, treat it accordingly... (SMOTE or classweighting)
 (>>> df['Churn'].value_counts(normalize=True)
 Churn
 No     0.73463
@@ -25,7 +25,7 @@ Yes    0.26537
    Fiber-optic users show a higher churn rate. Focusing on service improvements or special promotions for these customers could help retain them.
 
 5. **Address Churn in Electronic Check Payments**  
-   Customers paying via electronic check churn the most. Encouraging a switch to more stable payment methods with incentives or better user experience might help.
+   Customers paying via electronic check churn the most. Maybe encouraging a switch to more stable payment methods with incentives or better user experience might help? Be sure to check other associations with electric payments too...
 
 ### Motivation for Predictive Modeling and Interpretability
 
@@ -38,7 +38,7 @@ Yes    0.26537
 ---
 
 ## Data Processing Recommendations
-- **Address Class Imbalance**: The churn class is imbalanced, mustapply techniques such as oversampling (SMOTE) or class weighting in models.
+- **Address Class Imbalance**: The churn class is imbalanced, must deal appropriately -> oversampling (SMOTE) or class weighting in models.
 - **Handle Missing Data**: No missing values in this dataset
 - **Standardization**: Standardize tenure, MonthlyCharges, and TotalCharges for better model performance, as they have different scales.
 - **Encode Categorical Variables**: Use one-hot encoding for categorical variables like InternetService, Contract, PaymentMethod, and others.
@@ -49,9 +49,9 @@ Yes    0.26537
 ## Algorithm Recommendations
 - **Logistic Regression**: A good starting point given the binary nature of the target variable (Churn), especially after feature scaling and one-hot encoding.
 - **Random Forest / Gradient Boosting**: These ensemble methods can capture non-linear relationships and interactions between features effectively.
-- **XGBoost**: Ideal for handling imbalanced data and extracting complex patterns.
-- **Support Vector Machine (SVM)**: Useful for classification tasks, though more appropriate after scaling the features.
-- **Neural Networks**: Applicable if the dataset is large enough, especially after transforming categorical variables into suitable formats.
+- **XGBoost**: (Good for handling imbalanced data)
+- **Support Vector Machine (SVM)**: Useful for classification tasks, (scaling the features is important here
+- **Neural Networks**: Applicable if the dataset is large enough, especially after transforming categorical variables into the rihgt format
 
 ## Numerical Variables Analysis
 
