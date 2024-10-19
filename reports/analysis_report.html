@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Analysis Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #666;
+            margin-top: 30px;
+        }
+
+        h4 {
+            color: #777;
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .stat {
+            font-weight: bold;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .small-text {
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Data Analysis Report</h1>
+
+    <!-- Missing Value Analysis Section -->
+    <div class="section">
+        <h2>Missing Value Analysis</h2>
+        
+        <h3>Missing Values Table</h3>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Missing Values</th>
+      <th>Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+        <h3>Visualizations</h3>
+        
+        
+        
+    </div>
+
+    <!-- Outlier Detection Section -->
+    <div class="section">
+        <h2>Outlier Detection</h2>
+        <h3>Outlier Counts</h3>
+        <table>
+            <tr>
+                <th>Variable</th>
+                <th>Outlier Count</th>
+            </tr>
+            
+            <tr>
+                <td>SeniorCitizen</td>
+                <td>1141</td>
+            </tr>
+            
+            <tr>
+                <td>tenure</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>MonthlyCharges</td>
+                <td>0</td>
+            </tr>
+            
+        </table>
+        <h3>Visualizations</h3>
+        
+        <h4>Outlier Detection for SeniorCitizen</h4>
+        <img src="plots/outlier_detection_SeniorCitizen.png" alt="Outlier Plot for SeniorCitizen">
+        
+        <h4>Outlier Detection for tenure</h4>
+        <img src="plots/outlier_detection_tenure.png" alt="Outlier Plot for tenure">
+        
+        <h4>Outlier Detection for MonthlyCharges</h4>
+        <img src="plots/outlier_detection_MonthlyCharges.png" alt="Outlier Plot for MonthlyCharges">
+        
+    </div>
+
+    <!-- Descriptive Statistics Section -->
+    <div class="section">
+        <h2>Descriptive Statistics</h2>
+        
+        <h3>Numerical Variables</h3>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>tenure</th>
+      <td>7021.0</td>
+      <td>32.47</td>
+      <td>24.53</td>
+      <td>0.00</td>
+      <td>9.00</td>
+      <td>29.0</td>
+      <td>55.0</td>
+      <td>72.00</td>
+    </tr>
+    <tr>
+      <th>MonthlyCharges</th>
+      <td>7021.0</td>
+      <td>64.85</td>
+      <td>30.07</td>
+      <td>18.25</td>
+      <td>35.75</td>
+      <td>70.4</td>
+      <td>89.9</td>
+      <td>118.75</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h3>Categorical Variables</h3>
+        
+        <h4>gender</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>Male</th>
+      <td>3541</td>
+    </tr>
+    <tr>
+      <th>Female</th>
+      <td>3480</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>Partner</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>3619</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>3402</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>Dependents</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>4911</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2110</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>PhoneService</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>Yes</th>
+      <td>6339</td>
+    </tr>
+    <tr>
+      <th>No</th>
+      <td>682</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>MultipleLines</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>3368</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2971</td>
+    </tr>
+    <tr>
+      <th>No phone service</th>
+      <td>682</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>InternetService</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>Fiber optic</th>
+      <td>3090</td>
+    </tr>
+    <tr>
+      <th>DSL</th>
+      <td>2419</td>
+    </tr>
+    <tr>
+      <th>No</th>
+      <td>1512</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>OnlineSecurity</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>3490</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1512</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>OnlineBackup</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>3080</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2429</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1512</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>DeviceProtection</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>3087</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2422</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1512</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>TechSupport</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>3465</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2044</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1512</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>StreamingTV</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>2802</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2707</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1512</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>StreamingMovies</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>2777</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2732</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1512</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>Contract</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>Month-to-month</th>
+      <td>3853</td>
+    </tr>
+    <tr>
+      <th>Two year</th>
+      <td>1695</td>
+    </tr>
+    <tr>
+      <th>One year</th>
+      <td>1473</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>PaperlessBilling</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>Yes</th>
+      <td>4161</td>
+    </tr>
+    <tr>
+      <th>No</th>
+      <td>2860</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>PaymentMethod</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>Electronic check</th>
+      <td>2359</td>
+    </tr>
+    <tr>
+      <th>Mailed check</th>
+      <td>1596</td>
+    </tr>
+    <tr>
+      <th>Bank transfer (automatic)</th>
+      <td>1544</td>
+    </tr>
+    <tr>
+      <th>Credit card (automatic)</th>
+      <td>1522</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>TotalCharges</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th></th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>19.75</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>20.2</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>19.9</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>19.65</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>20.25</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>45.3</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>20.05</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>19.55</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>19.45</th>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <p class="small-text">Showing top 10 out of 6531 categories.</p>
+        
+        
+        <h4>Churn</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>5164</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1857</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        <h4>SeniorCitizen</h4>
+        <table border="1" class="dataframe table table-striped">
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5880</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1141</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+        
+    </div>
+
+    <!-- Bivariate Analysis Section -->
+    <div class="section">
+        <h2>Bivariate Analysis</h2>
+        
+        <h3>Analysis of gender vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_gender_vs_Churn.png" alt="Plot of gender vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>gender</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 1
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_gender_vs_Churn.png"
+            alt="Stacked Bar Chart of gender vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of SeniorCitizen vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_SeniorCitizen_vs_Churn.png" alt="Plot of SeniorCitizen vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>SeniorCitizen</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 1
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_SeniorCitizen_vs_Churn.png"
+            alt="Stacked Bar Chart of SeniorCitizen vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of Partner vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_Partner_vs_Churn.png" alt="Plot of Partner vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>Partner</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 1
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_Partner_vs_Churn.png"
+            alt="Stacked Bar Chart of Partner vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of Dependents vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_Dependents_vs_Churn.png" alt="Plot of Dependents vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>Dependents</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 1
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_Dependents_vs_Churn.png"
+            alt="Stacked Bar Chart of Dependents vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of tenure vs Churn (Numeric Vs Categorical)
+        </h3>
+        
+        
+
+        
+        <!-- Descriptive Statistics -->
+        
+        <h4>Descriptive Statistics</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>median</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Churn</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>73</td>
+      <td>36.0</td>
+      <td>21.22</td>
+      <td>0</td>
+      <td>36.0</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>72</td>
+      <td>36.5</td>
+      <td>20.93</td>
+      <td>1</td>
+      <td>36.5</td>
+      <td>72</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Statistical Test -->
+        
+        <h4>Statistical Test</h4>
+        <p><span class="stat">Test Used:</span> Independent T-test</p>
+        <p><span class="stat">Statistic:</span> -0.1429, <span
+                class="stat">p-value:</span> 0.8866</p>
+        
+        <!-- Visualizations -->
+        
+        <img src="plots/boxplot_tenure_by_Churn.png" alt="Boxplot of tenure by Churn">
+        
+        
+        <img src="plots/violinplot_tenure_by_Churn.png"
+            alt="Violin Plot of tenure by Churn">
+        
+        
+        <img src="plots/stripplot_tenure_by_Churn.png" alt="Strip Plot of tenure by Churn">
+        
+        
+        <img src="plots/distplot_tenure_by_Churn.png"
+            alt="Distribution Plot of tenure by Churn">
+        
+        
+        
+        
+        <h3>Analysis of PhoneService vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_PhoneService_vs_Churn.png" alt="Plot of PhoneService vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>PhoneService</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 1
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_PhoneService_vs_Churn.png"
+            alt="Stacked Bar Chart of PhoneService vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of MultipleLines vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_MultipleLines_vs_Churn.png" alt="Plot of MultipleLines vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>MultipleLines</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No phone service</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_MultipleLines_vs_Churn.png"
+            alt="Stacked Bar Chart of MultipleLines vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of InternetService vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_InternetService_vs_Churn.png" alt="Plot of InternetService vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>InternetService</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>DSL</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Fiber optic</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_InternetService_vs_Churn.png"
+            alt="Stacked Bar Chart of InternetService vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of OnlineSecurity vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_OnlineSecurity_vs_Churn.png" alt="Plot of OnlineSecurity vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>OnlineSecurity</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_OnlineSecurity_vs_Churn.png"
+            alt="Stacked Bar Chart of OnlineSecurity vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of OnlineBackup vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_OnlineBackup_vs_Churn.png" alt="Plot of OnlineBackup vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>OnlineBackup</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_OnlineBackup_vs_Churn.png"
+            alt="Stacked Bar Chart of OnlineBackup vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of DeviceProtection vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_DeviceProtection_vs_Churn.png" alt="Plot of DeviceProtection vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>DeviceProtection</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_DeviceProtection_vs_Churn.png"
+            alt="Stacked Bar Chart of DeviceProtection vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of TechSupport vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_TechSupport_vs_Churn.png" alt="Plot of TechSupport vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>TechSupport</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_TechSupport_vs_Churn.png"
+            alt="Stacked Bar Chart of TechSupport vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of StreamingTV vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_StreamingTV_vs_Churn.png" alt="Plot of StreamingTV vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>StreamingTV</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_StreamingTV_vs_Churn.png"
+            alt="Stacked Bar Chart of StreamingTV vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of StreamingMovies vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_StreamingMovies_vs_Churn.png" alt="Plot of StreamingMovies vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>StreamingMovies</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>No internet service</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_StreamingMovies_vs_Churn.png"
+            alt="Stacked Bar Chart of StreamingMovies vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of Contract vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_Contract_vs_Churn.png" alt="Plot of Contract vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>Contract</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Month-to-month</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>One year</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Two year</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 2
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_Contract_vs_Churn.png"
+            alt="Stacked Bar Chart of Contract vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of PaperlessBilling vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_PaperlessBilling_vs_Churn.png" alt="Plot of PaperlessBilling vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>PaperlessBilling</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 1
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_PaperlessBilling_vs_Churn.png"
+            alt="Stacked Bar Chart of PaperlessBilling vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of PaymentMethod vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_PaymentMethod_vs_Churn.png" alt="Plot of PaymentMethod vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>PaymentMethod</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Bank transfer (automatic)</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Credit card (automatic)</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Electronic check</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Mailed check</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 3
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_PaymentMethod_vs_Churn.png"
+            alt="Stacked Bar Chart of PaymentMethod vs Churn">
+        
+        
+        
+        
+        <h3>Analysis of MonthlyCharges vs Churn (Numeric Vs Categorical)
+        </h3>
+        
+        
+
+        
+        <!-- Descriptive Statistics -->
+        
+        <h4>Descriptive Statistics</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>median</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Churn</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1460</td>
+      <td>72.33</td>
+      <td>27.25</td>
+      <td>18.25</td>
+      <td>74.38</td>
+      <td>118.75</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>910</td>
+      <td>73.77</td>
+      <td>25.78</td>
+      <td>18.85</td>
+      <td>79.12</td>
+      <td>118.35</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Statistical Test -->
+        
+        <h4>Statistical Test</h4>
+        <p><span class="stat">Test Used:</span> Independent T-test</p>
+        <p><span class="stat">Statistic:</span> -1.2972, <span
+                class="stat">p-value:</span> 0.1947</p>
+        
+        <!-- Visualizations -->
+        
+        <img src="plots/boxplot_MonthlyCharges_by_Churn.png" alt="Boxplot of MonthlyCharges by Churn">
+        
+        
+        <img src="plots/violinplot_MonthlyCharges_by_Churn.png"
+            alt="Violin Plot of MonthlyCharges by Churn">
+        
+        
+        <img src="plots/stripplot_MonthlyCharges_by_Churn.png" alt="Strip Plot of MonthlyCharges by Churn">
+        
+        
+        <img src="plots/distplot_MonthlyCharges_by_Churn.png"
+            alt="Distribution Plot of MonthlyCharges by Churn">
+        
+        
+        
+        
+        <h3>Analysis of TotalCharges vs Churn (Categorical Vs Categorical)
+        </h3>
+        
+        
+        <img src="plots/stacked_bar_TotalCharges_vs_Churn.png" alt="Plot of TotalCharges vs Churn">
+        
+
+        
+        <!-- Contingency Table -->
+        
+        <h4>Contingency Table</h4>
+        <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Churn</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>TotalCharges</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1008.7</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>19.7</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>20.95</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>25.7</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>260.9</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>49.9</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>80.55</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>85.5</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>93.55</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>94.4</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <!-- Chi-Squared Test -->
+        
+        <h4>Chi-Squared Test</h4>
+        <p><span class="stat">Chi-Squared Statistic:</span> 0.0,
+            <span class="stat">p-value:</span> 1.0000, <span
+                class="stat">Degrees of Freedom:</span> 9
+        </p>
+        <p><span class="stat">Cramér's V:</span> 0.0 (<span class="stat">Weak</span> association)</p>
+        
+        <!-- Visualization -->
+        
+        <img src="plots/stacked_bar_TotalCharges_vs_Churn.png"
+            alt="Stacked Bar Chart of TotalCharges vs Churn">
+        
+        
+        
+        
+    </div>
+
+</body>
+
+</html>
